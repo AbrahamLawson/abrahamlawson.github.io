@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: #f3d2c1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    
+}
+.navBar{
+   position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.navBar .navLiens ul{
+    display: flex;
+}
+.navBar .navLiens ul li a{
+    margin: 0 30px;
+    color: #fff;
+    font-size: 1.50rem;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight:bold;
+    color: #fff;
+    box-shadow: inset -2px 2px 20px 4px;
+}
+.navBar .boutton{
+    display: none;
+    width: 35px;
+}
+
+.logo{
+    overflow: hidden;
+    position: relative;
+    font-weight: bold;
+}
+
+.logo span{
+    padding: 10px;
+    display: inline-block;
+    transition: transform 0.3s 
+    ease-out;
+}
+.logo span:nth-child(2){
+    position:absolute;
+    width: 100%;
+    text-align: center;
+    left: 100%;
+    color: palevioletred;
+}
+.logo:hover span{
+    transform: translateX(-100%);
+}
+.liensGlisserAcceuil{
+    position: relative;
+
+}
+.liensGlisserAcceuil::before{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+.liensGlisserAcceuil:hover::before{
+    transform-origin: 0 0;
+    transform: scaleX(1);
+}
+.liensGlisserApropros{
+    position: relative;
+
+}
+.liensGlisserApropos::before{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 5.6%;
+    height: 3px;
+    bottom: 62px;
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+.liensGlisserApropos:hover::before{
+    transform-origin: 0 0;
+    transform: scaleX(1);
+}
+.liensGlisserContact{
+    position: relative;
+
+}
+.liensGlisserContact::before{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+.liensGlisserContact:hover::before{
+    transform-origin: 0 0;
+    transform: scaleX(1);
+}
+
+
+
+
+
+.imageContainer{
+width: 685px;
+margin: 80px auto;
+overflow: hidden;
+box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+border: 15px solid rgba(255,255,255,0.6);
+}
+.imageContainer figure{
+    position: absolute;
+    top: 0;
+    left: 50px ;
+    width: 335px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+    transition: all 0.3s 
+    ease-in-out;
+}
+.imageContainer > figure{
+    position: relative;
+    left: 0;
+}
+.imageContainer  img{
+    display: flex;
+    width: 100%;
+}
+.imageContainer  input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    opacity: 0;
+    z-index: 100;
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+}
+.imageContainer input:checked{
+    width: 5px;
+    left: auto;
+    right: 0px;
+}
+.imageContainer input:checked ~ figure{
+    left: 335px;
+    transition: all 0.7s 
+    ease-in-out;
+    
+}
+.imageContainer figcaption{
+    width: 100%;
+    height: 100%;
+    background:rgba(87, 73, 81, 0.1); 
+    position: absolute;
+    top: 0px;
+    transition: all 0.2s linear;
+    
+}
+.imageContainer figcaption span{
+    position: absolute;
+    top: 40%;
+    margin-top: -30px;
+    right: 20px;
+    left: 20px;
+    overflow: hidden;
+    text-align: center;
+    background: rgba(87, 73, 81, 0.3);
+    line-height: 20px;
+    font-size: 18px;
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+.imageContainer input:checked + figcaption,
+.imageContainer input:checked:hover + figcaption{
+    background: rgba(87, 73, 81, 0);
+}
+.imageContainer input:checked + figcaption span{
+    transition: all 0.4s 
+    ease-in-out 0.5s;
+    opacity: 1;
+    top: 50%;
+}
+.imageContainer #radioLast:checked + figcaption span{
+    transition-delay: 0,3s;
+}
+.imageContainer input:hover + figcaption{
+    background: rgba(87, 73, 81, 0.03);
+}
+.imageContainer input:checked ~ figure input{
+    z-index: 1;
+}
+
+.imageContainer figure.active {
+    left: 0;
+    transition: all 0.7s 
+    ease-in-out;
+  }
+
+.mainFooter{
+    background-color: #242424;color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+@media screen and (max-width: 720px){
+    .navBar{
+        padding: 0;
+    }
+    .navBar .boutton{
+        display: block;
+    }
+    .navLiens{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: rgba(240, 232, 232, 0.439);
+        backdrop-filter: blur(8px);*/
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+    .navLiens.mobileMenu{
+        margin-left: 0;
+    }
+    .navLiens ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .navBar .navLiens ul li {
+        margin: 15px 0;
+    }
+
+}
